@@ -11,6 +11,9 @@ import java.net.URL;
 public class Mesure {
 
     public static void main(String[] args) {
+
+        System.setProperty("org.graphstream.ui", "swing");
+
         // Créer un graphe avec GraphStream
         Graph graph = new SingleGraph("MonGraphe");
 
@@ -22,17 +25,23 @@ public class Mesure {
         }
 
         String filePath = resourceUrl.getFile();
+         filePath = "/home/etudiant/ma204380/IdeaProjects/Mesures/target/classes/data.dgs";
 
-        FileSource fs = null;
         System.out.println(filePath);
 
+        FileSource fs = null;
         try {
             fs = FileSourceFactory.sourceFor(filePath);
-            fs.addSink(graph);
+            if (fs == null) {
+                System.out.println("Unable to create FileSource for " + filePath);
+                return;
+            }
 
+            fs.addSink(graph);
             fs.begin(filePath);
 
             while (fs.nextEvents()) {
+                // Optionally some code here ...
             }
 
             fs.end();
@@ -43,5 +52,7 @@ public class Mesure {
                 fs.removeSink(graph);
             }
         }
+
+        graph.display(false);
     }
 }
