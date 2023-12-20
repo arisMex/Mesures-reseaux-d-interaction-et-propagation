@@ -3,10 +3,13 @@ package Mesure;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
 import org.graphstream.stream.file.FileSource;
+import org.graphstream.stream.file.FileSourceEdge;
 import org.graphstream.stream.file.FileSourceFactory;
 
 import java.io.IOException;
 import java.net.URL;
+
+import static org.graphstream.algorithm.Toolkit.*;
 
 public class Mesure {
 
@@ -18,41 +21,39 @@ public class Mesure {
         Graph graph = new SingleGraph("MonGraphe");
 
         // Obtenez le chemin du fichier à partir des ressources
-        URL resourceUrl = Mesure.class.getResource("/com-dblp.ungraph.txt");
+        URL resourceUrl = Mesure.class.getResource("/this.txt");
         if (resourceUrl == null) {
-            System.out.println("File not found: com-dblp.ungraph.txt");
+            System.out.println("File not found: this.txt");
             return;
         }
 
         String filePath = resourceUrl.getFile();
-         filePath = "/home/etudiant/ma204380/IdeaProjects/Mesures/target/classes/data.dgs";
+         //filePath = "target/classes/this.txt";
 
         System.out.println(filePath);
 
-        FileSource fs = null;
+        FileSourceEdge edgeSource = new FileSourceEdge();
+
+        edgeSource.addSink(graph);
+
         try {
-            fs = FileSourceFactory.sourceFor(filePath);
-            if (fs == null) {
-                System.out.println("Unable to create FileSource for " + filePath);
-                return;
-            }
-
-            fs.addSink(graph);
-            fs.begin(filePath);
-
-            while (fs.nextEvents()) {
-                // Optionally some code here ...
-            }
-
-            fs.end();
-        } catch (IOException e) {
+            edgeSource.readAll(filePath);
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if (fs != null) {
-                fs.removeSink(graph);
-            }
+            edgeSource.removeSink(graph);
         }
+        System.out.println("Nombre de noeuds : " + graph.getNodeCount());
+        System.out.println("Nombre d'arêtes : " + graph.getEdgeCount());
+        System.out.println("Degré Moyen = " + averageDegree(graph));
+        System.out.println("Densité = " + density(graph));
+        System.out.println("Coefficient de Clustering Moyen = " + averageClusteringCoefficient(graph));
+        //System.out.println("Coefficient de Clustering de tous les noeuds = " + clusteringCoefficients(graph));
+        System.out.println("* Le coefficient de clustering pour un réseau aléatoire de la même taille et du même degré moyen sera le même \n\t Car : C = 3*DegréMoyen/tailleréseau " );
 
-        graph.display(false);
+
+
+
+       // graph.display();
     }
 }
