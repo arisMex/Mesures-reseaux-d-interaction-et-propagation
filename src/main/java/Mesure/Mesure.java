@@ -2,12 +2,9 @@ package Mesure;
 
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
-import org.graphstream.stream.file.FileSource;
 import org.graphstream.stream.file.FileSourceEdge;
-import org.graphstream.stream.file.FileSourceFactory;
-
-import java.io.IOException;
 import java.net.URL;
+
 
 import static org.graphstream.algorithm.Toolkit.*;
 
@@ -48,7 +45,7 @@ public class Mesure {
         System.out.println("Degré Moyen = " + averageDegree(graph));
         System.out.println("Densité = " + density(graph));
         System.out.println("Coefficient de Clustering Moyen = " + averageClusteringCoefficient(graph));
-        //System.out.println("Coefficient de Clustering de tous les noeuds = " + clusteringCoefficients(graph));
+        //System.out.println("Coefficient de Clustering de tous les noeuds = " + Arrays.toString(clusteringCoefficients(graph)));
         System.out.println("* Le coefficient de clustering pour un réseau aléatoire de la même taille et du même degré moyen sera le même \n\t Car : C = 3*DegréMoyen/tailleréseau " );
 
 
