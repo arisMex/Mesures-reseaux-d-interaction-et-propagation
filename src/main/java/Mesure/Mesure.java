@@ -112,7 +112,7 @@ public class Mesure {
         } finally {
             edgeSource.removeSink(graph);
         }
-       /* System.out.println("Nombre de noeuds : " + graph.getNodeCount());
+        System.out.println("Nombre de noeuds : " + graph.getNodeCount());
         int nbEdges = graph.getEdgeCount();
         System.out.println("Nombre d'arêtes : " + nbEdges);
         Double degreMoyen = averageDegree(graph);
@@ -129,7 +129,7 @@ public class Mesure {
         System.out.println("Un graphe aléatoir de telle taille et tel degré moyen est connexe avec une probabilité de : "+degreMoyen/nbEdges);
 
         System.out.println(Arrays.toString(degreeDistribution(graph)));
-        */
+        
 
 
         //* 4.
