@@ -16,7 +16,7 @@ import static org.graphstream.algorithm.Toolkit.degreeDistribution;
 public class GraphClass {
 
     protected static void distributionDegres(Graph graph, String file) throws IOException {
-        String filename = "target/classes/"+file;
+        String filename = "Data/Mesures/"+file;
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             // Écrire les données
@@ -38,7 +38,7 @@ public class GraphClass {
     //to File  : map => fichier
     protected static void distributionDistancesToFile( HashMap<Integer, Double> map, String file) throws IOException {
 
-        String filename = "target/classes/"+file;
+        String filename = "Data/Mesures/"+file;
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             // Écrire les données
@@ -60,7 +60,7 @@ public class GraphClass {
 
     // * */ generer un fichier plt pour une simulation
     protected static void genererFichierPLT(String filepath, String fileSource, String graphName, String typeGraph) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filepath))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Plot/"+filepath))) {
             // Écrire les données
             int k = 0;
             String type = (typeGraph == "log-log")?"set logscale xy\n":"";
@@ -68,7 +68,7 @@ public class GraphClass {
 
             writer.write("# Nom du fichier de sortie de l'image\n" +
                     "set terminal png\n" +
-                    "set output '"+graphName+"'\n" +
+                    "set output '../GraphsImages/Mesures/"+graphName+".png'\n" +
                     "\n" +
                     "# Titre du graphique\n" +
                     "set title 'Distribution Degrés'\n" +
@@ -78,7 +78,7 @@ public class GraphClass {
                     "set grid\n" +
                     "\n" +
                     "# Plots\n" +
-                    "plot '"+fileSource+"' using 1:2 with linespoints title '"+typeGraph+"' ");
+                    "plot '../Data/Mesures/"+fileSource+"' using 1:2 with linespoints title '"+typeGraph+"' ");
 
             // System.out.println("Data has been saved to " + filename);
         } catch (IOException e) {
@@ -89,7 +89,7 @@ public class GraphClass {
     // * */ executer un fichier plt et générer un graphe
     protected static void genererGraphe(String nomFichier) {
         try {
-            String command = "gnuplot target/classes/" + nomFichier;
+            String command = "cd Plot && gnuplot " + nomFichier;
             ProcessBuilder processBuilder = new ProcessBuilder("bash", "-c", command);
             processBuilder.redirectErrorStream(true);
             Process process = processBuilder.start();

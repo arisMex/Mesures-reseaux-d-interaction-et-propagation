@@ -65,16 +65,18 @@ public class GivenGraph extends GraphClass {
 
 
         //* 4.
-        String filename = "distributionDegres.dat";
+        String filename = "Graph1_distributionDegres.dat";
         distributionDegres(graph, filename);
-        String  pltFileName = "target/classes/distrib.plt";
-        String  pltFileName2 = "target/classes/distrib_loglog.plt";
-        String graphName = "distribs.png";String graphName2 = "distribs_loglog.png";
+        String  pltFileName = "Graph1_distrib.plt";
+        String  pltFileName2 = "Graph1_distrib_loglog.plt";
+        String graphName = "Graph1_distribs";String graphName2 = "Graph1_distribs_loglog";
         //graphe linéaire
         genererFichierPLT( pltFileName, filename, graphName, "linéaire");
         //graphe log-log
         genererFichierPLT( pltFileName2, filename, graphName2, "log-log");
-        //genererGraphe(pltFileName);
+        genererGraphe(pltFileName);
+        genererGraphe(pltFileName2);
+
 
         System.out.println("Le tracé en échelle log-log de la distribution des degrés  forme  une ligne semi-droite,\n" +
                 " cela dit que la distribution des degrés  suit  une loi de puissance ");
@@ -87,12 +89,11 @@ public class GivenGraph extends GraphClass {
         double averageDistance = AVGdistanceDistribution(distrDist);
         System.out.println("\n 5. Distance Moyenne :" + averageDistance);
         System.out.println("Distance moyenne estimée : " + averageDistance);
-        System.out.println("On a la Distance moyenne = "+averageDistance+ ((averageDistance>6)?" > 6  \n\t=> L'hypothèse des six degrés de séparation ne se confirme \n\t=>" +
-                " le réseau n'est pas un réseau petit monde car il ne remplit pas la condition de Six degrés de séparation "     :   "petit Monde ✅"));
+        System.out.println("On a la Distance moyenne = "+averageDistance+ ((averageDistance>6)?" > 6  \n\t=> L'hypothèse des six degrés de séparation se confirme  \n\t=> le réseau n'est pas un réseau petit monde car il ne remplit pas la condition de Six degrés de séparation "     :   "petit Monde ✅"));
 
 
-        String  pltFileName3 = "target/classes/Graph1_distribDist.plt";
-        String graphName3 = "Graph1_distribDist.png";
+        String  pltFileName3 = "Graph1_distribDist.plt";
+        String graphName3 = "Graph1_distribDist";
         String filename3 = "Graph1_distributionDist.dat";
         distributionDistancesToFile(distrDist, "Graph1_distributionDist.dat");
         //graphe linéaire
