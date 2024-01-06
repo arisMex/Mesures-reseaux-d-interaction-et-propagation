@@ -15,9 +15,7 @@ C  = 0.6324308280637396
 Le réseau scientifique est bel et bien connexe. 
 Car on a <k> >= ln(N) 
 Le seuil critique pour qu'un réseau aléatoire devienne connexe est atteint lorsque le nombre moyen de liaisons par nœud **\<k\>** est égal ou supérieur à **ln(N)**, où **N** représente le nombre total de nœuds dans le réseau.
- ```
- **<k> >= ln(N)**
- ```.
+**\<k\> >= ln(N)**
 
 ## Question 4
 
