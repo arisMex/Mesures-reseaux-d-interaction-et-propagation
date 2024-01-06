@@ -20,11 +20,14 @@ public class GraphClass {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             // Écrire les données
+            int  taille = graph.getNodeCount();
             int k = 0;
             for (double distribution : degreeDistribution(graph)) {
-                writer.write(k + "  " + distribution + "\n");
+                writer.write(k + "  " + distribution/taille + "\n");
                 k++;
             }
+
+
 
 
             // System.out.println("Data has been saved to " + filename);
@@ -105,21 +108,40 @@ public class GraphClass {
         }
     }
 
-    public static double AVGdistanceDistribution(HashMap<Integer, Double> map) {
-        double sum = 0;
-        int nb = 0;
-        for (Map.Entry<Integer, Double> m : map.entrySet()) {
-            Integer dist = m.getKey();
-            Double rep = m.getValue();
-            nb+= rep;
-            sum +=rep * nb;
-        }
-        return sum/nb;
+    public static List<Node> getEchantillon(Graph graphe, int tailleEchantillon) {
+        return  Toolkit.randomNodeSet(graphe, tailleEchantillon);
 
     }
 
-    public static HashMap<Integer, Double> distanceDistribution(Graph g, int n) {
-        List<Node> randomNodes = Toolkit.randomNodeSet(g, n);
+
+        public static double AVGdist( List<Node> echantillon, int tailleEchantillon) {
+        //List<Node> echantillon = Toolkit.randomNodeSet(graphe, tailleEchantillon);
+
+        double sommeDistancesMoyennes = 0;
+
+        for (Node n : echantillon) {
+            System.out.format("\r(%d/%d)", echantillon.indexOf(n) + 1, tailleEchantillon);
+            double sommeLocale = 0;
+            int nbVisites = 0;
+            BreadthFirstIterator iterateur =   new BreadthFirstIterator(n);
+
+
+            while (iterateur.hasNext()) {
+                Node noeudCourant = iterateur.next();
+                sommeLocale += iterateur.getDepthOf(noeudCourant);
+                nbVisites++;
+            }
+
+            sommeDistancesMoyennes += sommeLocale / nbVisites;
+        }
+
+        System.out.println();
+        return sommeDistancesMoyennes / tailleEchantillon;
+    }
+
+
+    public static HashMap<Integer, Double> distanceDistribution( List<Node> randomNodes, int n) {
+       // List<Node> randomNodes = Toolkit.randomNodeSet(g, n);
 
         HashMap<Integer, Double> distribution = new HashMap<>();
 

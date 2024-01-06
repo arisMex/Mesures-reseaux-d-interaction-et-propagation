@@ -1,5 +1,5 @@
 # Nom du fichier de données
-data_file = '../Data/Mesures/Graph1_distributionDegres.dat'
+data_file = '../Data/Mesures/Random_distributionDegres.dat'
 
 # Paramètre de la distribution de Poisson (lambda)
 # Degré moyen
@@ -9,7 +9,7 @@ C = 1.0
 
 # Nom du fichier de sortie de l'image
 set terminal png
-set output '../GraphsImages/Mesures/Graph1_Mesures.png'
+set output '../GraphsImages/Mesures/Random_Mesures.png'
 
 # Titre du graphique
 set title 'Distribution de Poisson et Loi de Puissance'

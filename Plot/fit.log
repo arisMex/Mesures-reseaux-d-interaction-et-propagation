@@ -1,0 +1,55 @@
+
+
+*******************************************************************************
+Fri Jan  5 16:13:02 2024
+
+
+FIT:    data read from data_file using 1:2
+        format = x:z
+        #datapoints = 344
+        residuals are weighted equally (unit weight)
+
+function used for fitting: power_law(x, a, c)
+	power_law(x, a, c) = c * x**(-a)
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 344
+x               = 1              
+z               = 0              
+
+Current set of parameters
+=========================
+a               = 1              
+c               = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Fri Jan  5 16:14:04 2024
+
+
+FIT:    data read from data_file using 1:2
+        format = x:z
+        #datapoints = 344
+        residuals are weighted equally (unit weight)
+
+function used for fitting: power_law(x, a, c)
+	power_law(x, a, c) = c * x**(-a)
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 344
+x               = 1              
+z               = 0              
+
+Current set of parameters
+=========================
+a               = 1              
+c               = 1              
+
+BREAK: Undefined value during function evaluation
