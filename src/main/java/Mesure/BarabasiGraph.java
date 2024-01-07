@@ -110,4 +110,4 @@ Loading :
  5. Distance Moyenne :5.080822774550433
 ⟨d⟩=lnN/ln⟨k⟩=ln(317080)/ln(6) ≈ 7.06953673441915
 Distance moyenne estimée : 5.080822774550433
-On a la Distance moyenne = 5.080822774550433petit Monde ✅*/
+On a la Distance moyenne = 5.080822774550433 petit Monde ✅*/
