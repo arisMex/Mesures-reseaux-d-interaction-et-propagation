@@ -92,3 +92,22 @@ public class BarabasiGraph extends GraphClass {
     }
 
 }
+/*2. Quelques mesures :
+* Nombre de noeuds : 317080
+* Nombre d'arêtes : 1108550
+* Degré Moyen = 6.992197513580322
+* Densité = 2.2051770429243334E-5
+* Coefficient de Clustering Moyen = 3.9488909484654744E-4
+
+
+3.Connexité :
+Ce graphe connexe ✅
+<k> < ln(N) !
+Loading :
+(1000/1000)
+(1000/1000)
+
+ 5. Distance Moyenne :5.080822774550433
+⟨d⟩=lnN/ln⟨k⟩=ln(317080)/ln(6) ≈ 7.06953673441915
+Distance moyenne estimée : 5.080822774550433
+On a la Distance moyenne = 5.080822774550433petit Monde ✅*/

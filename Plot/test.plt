@@ -12,11 +12,11 @@ set terminal png
 set output '../GraphsImages/Mesures/Graph1_Mesures.png'
 
 # Titre du graphique
-set title 'Distribution de Poisson et Loi de Puissance'
+set title 'Distribution des Degres '
 
 # Étiquettes des axes
-set xlabel 'Nombre de succès'
-set ylabel 'Probabilité'
+set xlabel 'k'
+set ylabel 'p(k)'
 
 # Style de lignes
 set style data linespoints
@@ -28,9 +28,10 @@ poisson(x, lambda) = exp(-lambda) * lambda**x / gamma(x + 1)
 power_law(x, a, c) = c * x**(-a)
 
 # Plot des données externes et de la distribution de Poisson
-plot data_file using 1:2 with linespoints title 'Données externes', \
-     poisson(x, lambda) with linespoints title sprintf('Poisson(%.1f)', lambda), \
-     power_law(x, alpha, C) with lines title sprintf('Loi de Puissance (alpha=%.2f)', alpha)
+plot data_file using 1:2 with linespoints title 'Log-log', \
+     poisson(x, lambda) with linespoints title sprintf('Poisson'), \
+     power_law(x, alpha, C) with lines title sprintf('Puissance ')
+
 
 # Affichage du graphique
 replot

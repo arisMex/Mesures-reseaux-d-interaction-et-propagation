@@ -1,15 +1,15 @@
 # Nom du fichier de données
-data_file = '../Data/Mesures/Random_distributionDegres.dat'
+data_file = '../Data/Mesures/Barabasi_distributionDegres.dat'
 
 # Paramètre de la distribution de Poisson (lambda)
 # Degré moyen
-lambda = 6.62208890914917
+lambda = 6.992197513580322
 alpha = lambda / (lambda - 1)
 C = 1.0
 
 # Nom du fichier de sortie de l'image
 set terminal png
-set output '../GraphsImages/Mesures/Random_Mesures.png'
+set output '../GraphsImages/Mesures/Barabasi_Mesures.png'
 
 # Titre du graphique
 set title 'Distribution des Degres '
