@@ -76,8 +76,8 @@ public class GraphClass {
                     "# Titre du graphique\n" +
                     "set title 'Distribution Degrés'\n" +
                     type+
-                    "set xlabel 'Degré'\n" +
-                    "set ylabel 'nb sommets'\n" +
+                    "set xlabel 'd'\n" +
+                    "set ylabel 'p(d)'\n" +
                     "set grid\n" +
                     "\n" +
                     "# Plots\n" +

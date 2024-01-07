@@ -4,8 +4,8 @@ set output '../GraphsImages/Mesures/Random_distribDist.png'
 
 # Titre du graphique
 set title 'Distribution Degrés'
-set xlabel 'Degré'
-set ylabel 'nb sommets'
+set xlabel 'd'
+set ylabel 'p(d)'
 set grid
 
 # Plots

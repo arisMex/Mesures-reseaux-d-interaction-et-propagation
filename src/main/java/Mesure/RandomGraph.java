@@ -85,3 +85,26 @@ public class RandomGraph extends GraphClass {
 
     }
 }
+/* Graphe Random :
+2. Quelques mesures :
+* Nombre de noeuds : 317080
+* Nombre d'arêtes : 1050027
+* Degré Moyen = 6.622958183288574
+* Densité = 2.0886946003884077E-5
+* Coefficient de Clustering Moyen = 1.6316792627395065E-5
+
+
+3.Connexité :
+Ce graphe n'est pas connexe ❌
+<k> < ln(N) !
+Loading :
+(1000/1000)
+(1000/1000)
+
+ 5. Distance Moyenne :6.87480832949113
+⟨d⟩=lnN/ln⟨k⟩=ln(317080)/ln(6.62208890914917) ≈ 6.700611818856679
+Distance moyenne estimée : 6.87480832949113
+On a la Distance moyenne = 6.87480832949113 > 6
+	=> L'hypothèse des six degrés de séparation se confirme
+	=> le réseau n'est pas un réseau petit monde car il ne remplit pas la condition de Six degrés de séparation
+*/
