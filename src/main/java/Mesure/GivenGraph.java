@@ -70,11 +70,11 @@ public class GivenGraph extends GraphClass {
         String  pltFileName2 = "Graph1_distrib_loglog.plt";
         String graphName = "Graph1_distribs";String graphName2 = "Graph1_distribs_loglog";
         //graphe linéaire
-        genererFichierPLT( pltFileName, filename, graphName, "linéaire");
+        //genererFichierPLT( pltFileName, filename, graphName, "linéaire");
         //graphe log-log
-        genererFichierPLT( pltFileName2, filename, graphName2, "log-log");
-        genererGraphe(pltFileName);
-        genererGraphe(pltFileName2);
+        //genererFichierPLT( pltFileName2, filename, graphName2, "log-log");
+        //genererGraphe(pltFileName);
+        //genererGraphe(pltFileName2);
 
 
         System.out.println("Le tracé en échelle log-log de la distribution des degrés  forme  une ligne semi-droite,\n" +
@@ -91,7 +91,6 @@ public class GivenGraph extends GraphClass {
         System.out.println("\n 5. Distance Moyenne :" + averageDistance);
         System.out.println("⟨d⟩=lnN/ln⟨k⟩=ln("+nbNodes+")/ln("+degreMoyen+") ≈ "+Math.log(nbNodes)/Math.log(degreMoyen));
         System.out.println("Distance moyenne estimée : " + averageDistance);
-        System.out.println("On a la Distance moyenne = "+averageDistance+ ((averageDistance>6)?" > 6  \n\t=> L'hypothèse des six degrés de séparation se confirme  \n\t=> le réseau n'est pas un réseau petit monde car il ne remplit pas la condition de Six degrés de séparation "     :   "petit Monde ✅"));
 
 
         String  pltFileName3 = "Graph1_distribDist.plt";
@@ -99,8 +98,8 @@ public class GivenGraph extends GraphClass {
         String filename3 = "Graph1_distributionDist.dat";
         //distributionDistancesToFile(distrDist, "Graph1_distributionDist.dat");
         //graphe linéaire
-        genererFichierPLT( pltFileName3, filename3, graphName3, "linéaire");
-        genererGraphe(pltFileName3);
+        //genererFichierPLT( pltFileName3, filename3, graphName3, "linéaire");
+        //genererGraphe(pltFileName3);
 
 
 

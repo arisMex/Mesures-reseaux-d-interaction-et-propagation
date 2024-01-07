@@ -47,11 +47,11 @@ public class RandomGraph extends GraphClass {
         String graphNameR= "Random_distribsDegre";
         String graphName2R = "Random_distribs_Degre_loglog";
         //graphe linéaire
-        genererFichierPLT( pltFileNameR, filenameR, graphNameR, "linéaire");
+        //genererFichierPLT( pltFileNameR, filenameR, graphNameR, "linéaire");
         //graphe log-log
-        genererFichierPLT( pltFileName2R, filenameR, graphName2R, "log-log");
-        genererGraphe(pltFileNameR);
-        genererGraphe(pltFileName2R);
+        //genererFichierPLT( pltFileName2R, filenameR, graphName2R, "log-log");
+        //genererGraphe(pltFileNameR);
+        //genererGraphe(pltFileName2R);
 
 
 
@@ -67,7 +67,6 @@ public class RandomGraph extends GraphClass {
         System.out.println("\n 5. Distance Moyenne :" + averageDistance);
         System.out.println("⟨d⟩=lnN/ln⟨k⟩=ln("+nbNodes+")/ln("+degreMoyen+") ≈ "+Math.log(nbNodes)/Math.log(degreMoyen));
         System.out.println("Distance moyenne estimée : " + averageDistance);
-        System.out.println("On a la Distance moyenne = "+averageDistance+ ((averageDistance>6)?" > 6  \n\t=> L'hypothèse des six degrés de séparation se confirme  \n\t=> le réseau n'est pas un réseau petit monde car il ne remplit pas la condition de Six degrés de séparation "     :   "petit Monde ✅"));
 
 
         String  pltFileName3 = "Random_distribDist.plt";
@@ -75,8 +74,8 @@ public class RandomGraph extends GraphClass {
         String filename3 = "Random_distributionDist.dat";
         distributionDistancesToFile(distrDist, "Random_distributionDist.dat");
         //graphe linéaire
-        genererFichierPLT( pltFileName3, filename3, graphName3, "linéaire");
-        genererGraphe(pltFileName3);
+        //genererFichierPLT( pltFileName3, filename3, graphName3, "linéaire");
+        //genererGraphe(pltFileName3);
 
 
 
@@ -104,7 +103,5 @@ Loading :
  5. Distance Moyenne :6.87480832949113
 ⟨d⟩=lnN/ln⟨k⟩=ln(317080)/ln(6.62208890914917) ≈ 6.700611818856679
 Distance moyenne estimée : 6.87480832949113
-On a la Distance moyenne = 6.87480832949113 > 6
-	=> L'hypothèse des six degrés de séparation se confirme
-	=> le réseau n'est pas un réseau petit monde car il ne remplit pas la condition de Six degrés de séparation
+
 */

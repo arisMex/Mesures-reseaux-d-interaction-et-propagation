@@ -53,11 +53,11 @@ public class BarabasiGraph extends GraphClass {
         String graphNameR= "Barabasi_distribsDegres";
         String graphName2R = "Barabasi_distribs_Degre_loglog";
         //graphe linéaire
-        genererFichierPLT( pltFileNameR, filenameR, graphNameR, "linéaire");
+        //genererFichierPLT( pltFileNameR, filenameR, graphNameR, "linéaire");
         //graphe log-log
-        genererFichierPLT( pltFileName2R, filenameR, graphName2R, "log-log");
-        genererGraphe(pltFileNameR);
-        genererGraphe(pltFileName2R);
+        //genererFichierPLT( pltFileName2R, filenameR, graphName2R, "log-log");
+        //genererGraphe(pltFileNameR);
+        //genererGraphe(pltFileName2R);
 
 
 
@@ -73,21 +73,14 @@ public class BarabasiGraph extends GraphClass {
         System.out.println("\n 5. Distance Moyenne :" + averageDistance);
         System.out.println("⟨d⟩=lnN/ln⟨k⟩=ln("+nbNodes+")/ln("+degreMoyen+") ≈ "+Math.log(nbNodes)/Math.log(degreMoyen));
         System.out.println("Distance moyenne estimée : " + averageDistance);
-        System.out.println("On a la Distance moyenne = "+averageDistance+ ((averageDistance>6)?" > 6  \n\t=> L'hypothèse des six degrés de séparation se confirme  \n\t=> le réseau n'est pas un réseau petit monde car il ne remplit pas la condition de Six degrés de séparation "     :   "petit Monde ✅"));
-
 
         String  pltFileName3 = "Barabasi_distribDist.plt";
         String graphName3 = "Barabasi_distribDist";
         String filename3 = "Barabasi_distributionDist.dat";
         distributionDistancesToFile(distrDist, "Barabasi_distributionDist.dat");
         //graphe linéaire
-        genererFichierPLT( pltFileName3, filename3, graphName3, "linéaire");
-        genererGraphe(pltFileName3);
-
-
-
-
-
+       // genererFichierPLT( pltFileName3, filename3, graphName3, "linéaire");
+        //genererGraphe(pltFileName3);
 
     }
 

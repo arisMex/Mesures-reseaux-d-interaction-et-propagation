@@ -32,7 +32,7 @@ La distance moyenne, calculée à partir d'un échantillon de 1000 nœuds, est d
 
 L'hypothèse des six degrés de séparation se confirme partiellement, car bien que la distance moyenne entre les individus du réseau soit proche de 6, il existe des distances qui dépassent cette valeur. Cela suggère une certaine variabilité dans les connexions, avec une tendance générale à respecter l'idée des six degrés de séparation, mais des exceptions existent sous la forme de distances plus importantes que 6 entre certains noeuds.
 
-Dans un réseau aléatoire avec les mêmes caractéristiques de degré moyen, nombre de nœuds et distance moyenne, la distance moyenne peut être approximée par la formule de la distance moyenne dans un réseau aléatoire. Cette formule est donnée par : ⟨d⟩≈ln(N)/ln(⟨k⟩). qui est la même dans nnotre réseau , alors la distance moyenne d'un réseau aléatoire avec es mêmes caractéristiques sera similaire.
+Dans un réseau aléatoire avec les mêmes caractéristiques de degré moyen, nombre de nœuds et distance moyenne, la distance moyenne peut être approximée par la formule de la distance moyenne dans un réseau aléatoire. Cette formule est donnée par : **⟨d⟩ ≈ ln(N) / ln(⟨k⟩)**. qui est la même dans nnotre réseau , alors la distance moyenne d'un réseau aléatoire avec es mêmes caractéristiques sera similaire.
 
 ![Distribution des distances](GraphsImages/Mesures/Graph1_distribDist.png)
 
@@ -55,6 +55,22 @@ Hypothèse sur la loi de distribution des distances dans un réseau de type "Pet
 
 
 ## Question 6
+
+### Comparaison : 
+
+##### Distribution des Degrés
+![Distribution des distances](GraphsImages/Mesures/DistribDegresCompare.png)
+Lorsqu'on examine la distribution des distances dans le graphe de collaboration sur le terrain, on constate une similitude significative avec la distribution observée dans le graphe aléatoire. Cette similitude peut s'expliquer par le caractère aléatoire des connexions dans le réseau de collaboration de terrain. Dans un réseau aléatoire, où chaque nœud a une probabilité égale de se connecter à d'autres nœuds, la distribution des distances a tendance à être plus uniforme, ce qui pourrait expliquer le rapprochement observé.
+
+En revanche, la distribution des distances dans un réseau Barabasi-Albert diffère substantiellement. Le modèle Barabasi-Albert, caractérisé par l'attachement préférentiel, favorise la formation de hubs, conduisant à des distances plus courtes entre les nœuds. La moyenne des distances dans un réseau Barabasi-Albert est ainsi plus petite, ce qui témoigne de la propension de ce modèle à créer des connexions courtes entre les nœuds centraux du réseau. Cette dissimilitude met en évidence l'influence des mécanismes spécifiques de connexion sur la distribution des distances dans ces différents types de réseaux.
+
+##### Distribution des Distances
+![Distribution des distances](GraphsImages/Mesures/DistribDistancesCompare.png)
+Lorsqu'on examine la distribution des distances dans le graphe de collaboration sur le réseau de collaboration scientifique (le terrain), on constate une similitude significative avec la distribution observée dans le graphe aléatoire. Cette similitude peut s'expliquer par le caractère aléatoire des connexions dans le réseau de collaboration de terrain. Dans un réseau aléatoire, où chaque nœud a une probabilité égale de se connecter à d'autres nœuds, la distribution des distances a tendance à être plus uniforme, ce qui pourrait expliquer le rapprochement observé.
+
+En revanche, la distribution des distances dans un réseau Barabasi-Albert diffère substantiellement. Le modèle Barabasi-Albert, caractérisé par l'attachement préférentiel, favorise la formation de hubs, conduisant à des distances plus courtes entre les nœuds. La moyenne des distances dans un réseau Barabasi-Albert est ainsi plus petite, ce qui témoigne de la propension de ce modèle à créer des connexions courtes entre les nœuds centraux du réseau. Cette dissimilitude met en évidence l'influence des mécanismes spécifiques de connexion sur la distribution des distances dans ces différents types de réseaux.
+
+##### Quelques Mesures : 
 
 | *Mesure*     | R Collaboration | random    | Barabasi-Albert
 |--------------|-----------------|-----------|-------------
