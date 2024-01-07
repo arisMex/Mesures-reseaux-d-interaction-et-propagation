@@ -40,7 +40,7 @@ public class RandomGraph extends GraphClass {
         System.out.println((isConnected(graphR))?"Ce graphe connexe ✅ "  :"Ce graphe n'est pas connexe ❌");
         System.out.println((degreMoyen > Math.log(nbNodes)?"<k> > ln(N)":"<k> < ln(N) !"));
 
-        String filenameR = "Random_distributionDegres_Random.dat";
+        String filenameR = "Random_distributionDegres.dat";
         distributionDegres(graphR, filenameR );
         String  pltFileNameR = "Random_distribRandom.plt";
         String  pltFileName2R = "Random_distrib_Random_loglog.plt";
