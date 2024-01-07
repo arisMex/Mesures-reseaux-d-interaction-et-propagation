@@ -60,12 +60,14 @@ Hypothèse sur la loi de distribution des distances dans un réseau de type "Pet
 
 ##### Distribution des Degrés
 ![Distribution des distances](GraphsImages/Mesures/DistribDegresCompare.png)
+
 Lorsqu'on examine la distribution des distances dans le graphe de collaboration sur le terrain, on constate une similitude significative avec la distribution observée dans le graphe aléatoire. Cette similitude peut s'expliquer par le caractère aléatoire des connexions dans le réseau de collaboration de terrain. Dans un réseau aléatoire, où chaque nœud a une probabilité égale de se connecter à d'autres nœuds, la distribution des distances a tendance à être plus uniforme, ce qui pourrait expliquer le rapprochement observé.
 
 En revanche, la distribution des distances dans un réseau Barabasi-Albert diffère substantiellement. Le modèle Barabasi-Albert, caractérisé par l'attachement préférentiel, favorise la formation de hubs, conduisant à des distances plus courtes entre les nœuds. La moyenne des distances dans un réseau Barabasi-Albert est ainsi plus petite, ce qui témoigne de la propension de ce modèle à créer des connexions courtes entre les nœuds centraux du réseau. Cette dissimilitude met en évidence l'influence des mécanismes spécifiques de connexion sur la distribution des distances dans ces différents types de réseaux.
 
 ##### Distribution des Distances
 ![Distribution des distances](GraphsImages/Mesures/DistribDistancesCompare.png)
+
 Lorsqu'on examine la distribution des distances dans le graphe de collaboration sur le réseau de collaboration scientifique (le terrain), on constate une similitude significative avec la distribution observée dans le graphe aléatoire. Cette similitude peut s'expliquer par le caractère aléatoire des connexions dans le réseau de collaboration de terrain. Dans un réseau aléatoire, où chaque nœud a une probabilité égale de se connecter à d'autres nœuds, la distribution des distances a tendance à être plus uniforme, ce qui pourrait expliquer le rapprochement observé.
 
 En revanche, la distribution des distances dans un réseau Barabasi-Albert diffère substantiellement. Le modèle Barabasi-Albert, caractérisé par l'attachement préférentiel, favorise la formation de hubs, conduisant à des distances plus courtes entre les nœuds. La moyenne des distances dans un réseau Barabasi-Albert est ainsi plus petite, ce qui témoigne de la propension de ce modèle à créer des connexions courtes entre les nœuds centraux du réseau. Cette dissimilitude met en évidence l'influence des mécanismes spécifiques de connexion sur la distribution des distances dans ces différents types de réseaux.
