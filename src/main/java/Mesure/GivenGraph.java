@@ -111,3 +111,28 @@ public class GivenGraph extends GraphClass {
 
     }
 }
+
+/*2. Quelques mesures :
+* Nombre de noeuds : 317080
+* Nombre d'arêtes : 1049866
+* Degré Moyen = 6.62208890914917
+* Densité = 2.0884666810161434E-5
+* Coefficient de Clustering Moyen = 0.6324308280637396
+* Le coefficient de clustering pour un réseau aléatoire de la même taille et du même degré moyen sera le même
+	 Car : C = 3*DegréMoyen/tailleréseau
+
+
+3.Connexité :
+Ce graphe connexe ✅
+Un graphe aléatoire de telle taille et tel degré moyen est connexe avec une probabilité de : 6.307556306375452E-6
+Un graphe aléatoire est connexe si <k> > ln(N) .
+Le tracé en échelle log-log de la distribution des degrés  forme  une ligne semi-droite,
+ cela dit que la distribution des degrés  suit  une loi de puissance
+
+ 5. Distance Moyenne :6.789172899583702
+⟨d⟩=lnN/ln⟨k⟩=ln(317080)/ln(6.62208890914917) ≈ 6.700611818856679
+Distance moyenne estimée : 6.789172899583702
+On a la Distance moyenne = 6.789172899583702 > 6
+	=> L'hypothèse des six degrés de séparation se confirme
+	=> le réseau n'est pas un réseau petit monde car il ne remplit pas la condition de Six degrés de séparation
+*/

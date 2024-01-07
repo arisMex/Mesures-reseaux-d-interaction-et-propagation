@@ -5,8 +5,8 @@ set output '../GraphsImages/Mesures/Graph1_distribs_loglog.png'
 # Titre du graphique
 set title 'Distribution Degrés'
 set logscale xy
-set xlabel 'Degré'
-set ylabel 'nb sommets'
+set xlabel 'k'
+set ylabel 'p(k)/N'
 set grid
 
 # Plots
