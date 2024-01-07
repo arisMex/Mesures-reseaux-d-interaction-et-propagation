@@ -1,5 +1,6 @@
 ## Mesures de réseaux d'intéraction (réseau de collaboration scientifique en informatique)
 
+
 ## Question 2
 
 Quelues Mesures de base :
@@ -18,7 +19,12 @@ Le seuil critique pour qu'un réseau aléatoire devienne connexe est atteint lor
 **\<k\> >= ln(N)**
 
 ## Question 4
+
 ![Distribution des degrés](GraphsImages/Mesures/Graph1_Mesures.png)
+
+![Distribution des degrés](GraphsImages/Mesures/Graph1_Mesures.png)
+Le tracé en échelle log-log de la distribution des degrés  forme  une ligne semi-droite,\n" +
+                " cela dit que la distribution des degrés  suit  une loi de puissance
 
 ## Question 5 
 
