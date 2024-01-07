@@ -56,9 +56,6 @@ Hypothèse sur la loi de distribution des distances dans un réseau de type "Pet
 
 ## Question 6
 
-
-## Question 6
-
 | *Mesure*     | R Collaboration | random    | Barabasi-Albert
 |--------------|-----------------|-----------|-------------
 | $`\|N\|`$    | 317 082         | 317 082   | 317 082
