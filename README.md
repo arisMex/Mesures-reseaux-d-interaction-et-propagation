@@ -99,13 +99,10 @@ Les mesures de votre réseau collaboratif, du réseau aléatoire et du réseau B
 4. **Coefficient de Clustering ( C ) :**
     - Le réseau collaboratif a un coefficient de regroupement moyen significatif ( C  = 0.632 ), indiquant une certaine structure de regroupement. Le réseau aléatoire a un coefficient de regroupement négligeable, ce qui est attendu dans un réseau aléatoire. Le réseau Barabasi-Albert a également un faible coefficient de regroupement.
 
-5. **Densité moyenne ( densité ) :**
-    - Les densités moyennes sont relativement proches les unes des autres, bien que légèrement différentes. Cela peut être attribuable aux différences dans la construction et la croissance des réseaux.
-
-6. **Distance moyenne ( d ) :**
+5**Distance moyenne ( d ) :**
     - La distance moyenne est cohérente avec les attentes théoriques. Le réseau aléatoire a une distance moyenne légèrement inférieure à celle du réseau collaboratif, ce qui est typique des réseaux aléatoires. Le réseau Barabasi-Albert a une distance moyenne légèrement plus élevée.
 
-7. **Connexité :**
+6**Connexité :**
     - Le réseau collaboratif et le réseau Barabasi-Albert sont connexes, tandis que le réseau aléatoire ne l'est pas. Cela correspond aux attentes théoriques.
 
 Globalement, les mesures semblent cohérentes avec les attentes théoriques, avec quelques différences qui peuvent être attribuées aux propriétés spécifiques.
