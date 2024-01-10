@@ -24,7 +24,12 @@ Le seuil critique pour qu'un réseau aléatoire devienne connexe est atteint lor
 
 Le tracé en échelle log-log de la distribution des degrés montre une courbe plutôt qu'une ligne droite.
 ![Distribution des degrés](GraphsImages/Mesures/Graph1_Mesures.png)
-Il ne s'agit pas d'une distribution de poisson ni de puissance.
+
+La distribution de nos degrés ne s'agit pas d'une distribution de poisson ni de puissance.
+
+Coefficients : 
+lc ≈ 2.34241 | 
+γ ≈ 2.70539
 
 ## Question 5
 
@@ -99,10 +104,10 @@ Les mesures de votre réseau collaboratif, du réseau aléatoire et du réseau B
 4. **Coefficient de Clustering ( C ) :**
     - Le réseau collaboratif a un coefficient de regroupement moyen significatif ( C  = 0.632 ), indiquant une certaine structure de regroupement. Le réseau aléatoire a un coefficient de regroupement négligeable, ce qui est attendu dans un réseau aléatoire. Le réseau Barabasi-Albert a également un faible coefficient de regroupement.
 
-5**Distance moyenne ( d ) :**
+5. **Distance moyenne ( d ) :**
     - La distance moyenne est cohérente avec les attentes théoriques. Le réseau aléatoire a une distance moyenne légèrement inférieure à celle du réseau collaboratif, ce qui est typique des réseaux aléatoires. Le réseau Barabasi-Albert a une distance moyenne légèrement plus élevée.
 
-6**Connexité :**
+6. **Connexité :**
     - Le réseau collaboratif et le réseau Barabasi-Albert sont connexes, tandis que le réseau aléatoire ne l'est pas. Cela correspond aux attentes théoriques.
 
 Globalement, les mesures semblent cohérentes avec les attentes théoriques, avec quelques différences qui peuvent être attribuées aux propriétés spécifiques.

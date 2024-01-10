@@ -61,6 +61,28 @@ public class GraphClass {
 
     }
 
+    public static void distributionPoissonDegresToFile(Graph graph){
+
+        String filename = "Data/Mesures/"+graph.getId()+"_PoissonDeg.dat";
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+            // Écrire les données
+            int[] data = Toolkit.degreeDistribution(graph);
+            int N = graph.getNodeCount();
+
+            for (int k = 0; k < data.length; k++) {
+                writer.write(k + "  " + (double)data[k]/(double)N + "\n");
+                k++;
+            }
+
+
+            // System.out.println("Data has been saved to " + filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("❌ Error saving data to " + filename);
+        }
+    }
+
     // * */ generer un fichier plt pour une simulation
     protected static void genererFichierPLT(String filepath, String fileSource, String graphName, String typeGraph) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Plot/"+filepath))) {
@@ -173,7 +195,6 @@ public class GraphClass {
 
         return distribution;
     }
-
 
 
 

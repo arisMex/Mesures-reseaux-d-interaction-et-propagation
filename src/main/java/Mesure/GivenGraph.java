@@ -103,6 +103,7 @@ public class GivenGraph extends GraphClass {
 
 
 
+        distributionPoissonDegresToFile( graph);
 
 
 
