@@ -25,9 +25,10 @@ Le seuil critique pour qu'un réseau aléatoire devienne connexe est atteint lor
 Le tracé en échelle log-log de la distribution des degrés montre une courbe plutôt qu'une ligne droite.
 ![Distribution des degrés](GraphsImages/Mesures/Graph1_Mesures.png)
 
-La distribution de nos degrés ne s'agit pas d'une distribution de poisson ni de puissance.
+En traçant la distribution de degrés en échelle log-log on observe une ligne pseudo-droite similaire à celle de la distribution de puissance . Cela nous indique qu'elle suit une loi de puissance .
 
-Coefficients : 
+Coefficients :
+
 lc ≈ 2.34241 | 
 γ ≈ 2.70539
 
@@ -116,6 +117,10 @@ Globalement, les mesures semblent cohérentes avec les attentes théoriques, ave
 
 
 
+### Conclision
+La comparaison avec un réseau aléatoire et un réseau Barabasi-Albert met en évidence des différences significatives. Le réseau collaboratif partage des similitudes avec le modèle Barabasi-Albert plus le réseau aléatoire. 
+Ensuite l'analyse des mesures offre un aperçu approfondi de la structure du réseau de collaboration scientifique en informatique, mettant en évidence ses propriétés complexes, son caractère petit monde, et des similitudes avec le modèle de Barabasi-Albert, tout en soulignant des distinctions par rapport à un réseau aléatoire.
 
 
 
+## Propagation
