@@ -1,13 +1,13 @@
 package Propagation;
 
+import org.graphstream.algorithm.Toolkit;
+import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+
+import java.util.*;
+import java.util.stream.Stream;
+
+import static Propagation.Functions.*;
 
 
 public class PropaSis implements InterfaceScenario {
@@ -19,12 +19,12 @@ public class PropaSis implements InterfaceScenario {
         private Set<Node> susceptibleNodes;
         private Set<Node> infectedNodes;
 
-        PropaSis(double beta, double mu, List<Node> susceptibleNodes) {
+        PropaSis(double beta, double mu, Graph graph) {
             this.beta = beta;
             this.mu = mu;
-            this.susceptibleNodes = new HashSet<>(susceptibleNodes);
-            this.infectedNodes = new HashSet<>();
-            infection(susceptibleNodes.get(RANDOM.nextInt(this.susceptibleNodes.size())));
+            susceptibleNodes = nodesSet(graph);
+            infectedNodes =  new HashSet<>();
+            infection(Toolkit.randomNode(graph ));
         }
 
         public List<Collection<Node>> propagation(int days) {
@@ -42,7 +42,9 @@ public class PropaSis implements InterfaceScenario {
         }
 
         private void sendMail(Node node) {
-            Iterator<Node> uIte = (Iterator<Node>) node.neighborNodes();
+            Stream<Node> nodeStrm = node.neighborNodes();
+            Iterator<Node> uIte = nodeStrm.iterator();
+
             while (uIte.hasNext()) {
                 Node u = uIte.next();
                 if (this.susceptibleNodes.contains(u)) {
@@ -57,6 +59,7 @@ public class PropaSis implements InterfaceScenario {
                 }
             }
         }
+
 
         private void infection(Node node) {
             this.infectedNodes.add(node);

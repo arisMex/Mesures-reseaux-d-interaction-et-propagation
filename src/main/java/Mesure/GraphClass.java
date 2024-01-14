@@ -136,7 +136,7 @@ public class GraphClass {
     }
 
 
-        public static double AVGdist( List<Node> echantillon, int tailleEchantillon) {
+    public static double AVGdist( List<Node> echantillon, int tailleEchantillon) {
         //List<Node> echantillon = Toolkit.randomNodeSet(graphe, tailleEchantillon);
 
         double sommeDistancesMoyennes = 0;
@@ -151,6 +151,31 @@ public class GraphClass {
             while (iterateur.hasNext()) {
                 Node noeudCourant = iterateur.next();
                 sommeLocale += iterateur.getDepthOf(noeudCourant);
+                nbVisites++;
+            }
+
+            sommeDistancesMoyennes += sommeLocale / nbVisites;
+        }
+
+        System.out.println();
+        return sommeDistancesMoyennes / tailleEchantillon;
+    }
+
+    public static double degreeVariance(Graph graphe,  int tailleEchantillon) {
+        List<Node> echantillon = Toolkit.randomNodeSet(graphe, tailleEchantillon);
+
+        double sommeDistancesMoyennes = 0;
+
+        for (Node n : echantillon) {
+            System.out.format("\r(%d/%d)", echantillon.indexOf(n) + 1, tailleEchantillon);
+            double sommeLocale = 0;
+            int nbVisites = 0;
+            BreadthFirstIterator iterateur =   new BreadthFirstIterator(n);
+
+
+            while (iterateur.hasNext()) {
+                Node noeudCourant = iterateur.next();
+                sommeLocale += Math.pow(iterateur.getDepthOf(noeudCourant), 2);
                 nbVisites++;
             }
 
@@ -195,7 +220,6 @@ public class GraphClass {
 
         return distribution;
     }
-
 
 
 }

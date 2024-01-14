@@ -1,5 +1,6 @@
 package Mesure;
 
+import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
 import org.graphstream.stream.file.FileSourceEdge;
 
@@ -9,6 +10,36 @@ import java.net.URL;
 import static org.graphstream.algorithm.Toolkit.*;
 
 public class GivenGraph extends GraphClass {
+
+    public Graph getGraph(){
+        System.setProperty("org.graphstream.ui", "swing");
+
+        // Créer un graphe avec GraphStream
+        org.graphstream.graph.Graph graph = new SingleGraph("MonGraphe");
+
+        // Obtenez le chemin du fichier à partir des ressources
+        URL resourceUrl = GraphClass.class.getResource("/this.txt");
+        if (resourceUrl == null) {
+            System.out.println("File not found: this.txt");
+            return null;
+        }
+
+        String filePath = resourceUrl.getFile();
+
+        FileSourceEdge edgeSource = new FileSourceEdge();
+
+        edgeSource.addSink(graph);
+
+        try {
+            edgeSource.readAll(filePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            edgeSource.removeSink(graph);
+        }
+
+        return graph;
+    }
     public static void main(String[] args) throws IOException {
 
         System.setProperty("org.graphstream.ui", "swing");
@@ -104,10 +135,6 @@ public class GivenGraph extends GraphClass {
 
 
         distributionPoissonDegresToFile( graph);
-
-
-
-
 
     }
 }
