@@ -13,7 +13,19 @@ import java.util.List;
 import static org.graphstream.algorithm.Toolkit.*;
 
 public class RandomGraph extends GraphClass {
-
+    public Graph getGraph(){
+        int nbNodes = 317080;
+        double degreMoyen = 6.62208890914917;
+        // Graphe Random
+        Graph graphR = new SingleGraph("Random");
+        Generator gen = new RandomGenerator(degreMoyen);
+        gen.addSink(graphR);
+        gen.begin();
+        for(int i=0; i<nbNodes; i++)
+            gen.nextEvents();
+        gen.end();
+        return graphR;
+    }
     public static void main(String[] args) throws IOException {
 
         int nbNodes = 317080;
