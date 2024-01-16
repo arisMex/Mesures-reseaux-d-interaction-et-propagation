@@ -68,20 +68,21 @@ public class BarabasiGraph extends GraphClass {
 
         List<Node> echantillon =getEchantillon(graphB, n);
         HashMap<Integer, Double> distrDist = distanceDistribution(echantillon, n);
-        double averageDistance = AVGdist( echantillon,  n);
-        //double averageDistance = 6.789172899583702;
+        /*double averageDistance = AVGdist( echantillon,  n);
         System.out.println("\n 5. Distance Moyenne :" + averageDistance);
         System.out.println("⟨d⟩=lnN/ln⟨k⟩=ln("+nbNodes+")/ln("+degreMoyen+") ≈ "+Math.log(nbNodes)/Math.log(degreMoyen));
-        System.out.println("Distance moyenne estimée : " + averageDistance);
+        System.out.println("Distance moyenne estimée : " + averageDistance);*/
 
         String  pltFileName3 = "Barabasi_distribDist.plt";
         String graphName3 = "Barabasi_distribDist";
         String filename3 = "Barabasi_distributionDist.dat";
-        distributionDistancesToFile(distrDist, "Barabasi_distributionDist.dat");
+        //distributionDistancesToFile(distrDist, "Barabasi_distributionDist.dat");
+
         //graphe linéaire
        // genererFichierPLT( pltFileName3, filename3, graphName3, "linéaire");
         //genererGraphe(pltFileName3);
 
+        exportGraph(graphB,"GraphsData/barabasi.dgs");
     }
 
 }

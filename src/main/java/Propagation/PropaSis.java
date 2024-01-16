@@ -1,13 +1,9 @@
 package Propagation;
 
-import org.graphstream.algorithm.Toolkit;
-import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 
 import java.util.*;
 import java.util.stream.Stream;
-
-import static Propagation.Functions.*;
 
 
 public class PropaSis implements InterfaceScenario {
@@ -19,12 +15,13 @@ public class PropaSis implements InterfaceScenario {
         private Set<Node> susceptibleNodes;
         private Set<Node> infectedNodes;
 
-        PropaSis(double beta, double mu, Graph graph) {
+        PropaSis(double beta, double mu, List<Node> susceptibleNodes) {
             this.beta = beta;
             this.mu = mu;
-            susceptibleNodes = nodesSet(graph);
+            this.susceptibleNodes = new HashSet<>(susceptibleNodes); ;
             infectedNodes =  new HashSet<>();
-            infection(Toolkit.randomNode(graph ));
+            infection(susceptibleNodes.get(RANDOM.nextInt(this.susceptibleNodes.size())));
+
         }
 
         public List<Collection<Node>> propagation(int days) {
@@ -48,7 +45,7 @@ public class PropaSis implements InterfaceScenario {
             while (uIte.hasNext()) {
                 Node u = uIte.next();
                 if (this.susceptibleNodes.contains(u)) {
-                    if (Math.random() < this.beta) {
+                    if (Math.random() <= this.beta) {
                         infection(u);
                     }
                 }

@@ -15,7 +15,7 @@ public class GivenGraph extends GraphClass {
         System.setProperty("org.graphstream.ui", "swing");
 
         // Créer un graphe avec GraphStream
-        org.graphstream.graph.Graph graph = new SingleGraph("MonGraphe");
+        org.graphstream.graph.Graph graph = new SingleGraph("DBLP");
 
         // Obtenez le chemin du fichier à partir des ressources
         URL resourceUrl = GraphClass.class.getResource("/this.txt");
@@ -137,6 +137,7 @@ public class GivenGraph extends GraphClass {
         distributionPoissonDegresToFile( graph);
 
     }
+
 }
 
 /*2. Quelques mesures :

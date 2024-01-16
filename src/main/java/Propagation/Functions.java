@@ -3,9 +3,7 @@ package Propagation;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class Functions {
@@ -59,7 +57,7 @@ public class Functions {
     }
 
     protected static void scenariosGenererFichierPLT(int id) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Plot/Propagation/Graph_"+id+"_Scenarios.dat"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Plot/Propagation/Graph_"+id+"_Scenarios.plt"))) {
             // Écrire les données
             int k = 0;
 
@@ -87,6 +85,24 @@ public class Functions {
         }
     }
     // * */ executer un fichier plt et générer un graphe
+    protected static void genererGraphe(String nomFichier) {
+        try {
+            String command = "cd Plot/Propagation && gnuplot " + nomFichier;
+            ProcessBuilder processBuilder = new ProcessBuilder("bash", "-c", command);
+            processBuilder.redirectErrorStream(true);
+            Process process = processBuilder.start();
+            InputStream inputStream = process.getInputStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            int exitCode = process.waitFor();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 }

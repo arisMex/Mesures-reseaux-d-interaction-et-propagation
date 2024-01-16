@@ -1,7 +1,6 @@
 package Propagation;
 
 import Mesure.GivenGraph;
-import Mesure.RandomGraph;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
@@ -21,18 +20,25 @@ public class TestPropa {
         long begin = System.currentTimeMillis();
 
         Graph g = (new GivenGraph()).getGraph();
-        Graph gR  = (new RandomGraph()).getGraph();
+        //Graph gR  = (new RandomGraph()).getGraph();
+        //Graph gBA = (new BarabasiGraph()).importGraph("GraphsData/barabasi.dgs");
         exec(g, 1);
         scenariosGenererFichierPLT(1);
-        exec(gR, 2);
+        genererGraphe("Graph_1_Scenarios.plt");
+
+       /* exec(gR, 2);
         scenariosGenererFichierPLT(2);
-        //exec(GraphUtils.readResource("Preferential", "preferential-graph.txt", new FileSourceDGS()));
+        genererGraphe("Graph_2_Scenarios.plt");
+
+        exec(gBA, 3);
+        scenariosGenererFichierPLT(3);
+        genererGraphe("Graph_3_Scenarios.plt");*/
         long end = System.currentTimeMillis();
         System.out.printf("%nExec in %d s%n", (end - begin) / 1000);
     }
 
     public static void exec(Graph g, int id) throws InterruptedException {
-        System.out.printf("%n%s%n%n", g.getId());
+        System.out.printf("%n Graph :%s %n%n", g.getId());
         double averageDegree = Toolkit.averageDegree(g);
         System.out.printf("<k>  = %f%n", averageDegree);
 
@@ -41,27 +47,25 @@ public class TestPropa {
         System.out.printf("<k²> = %f%n", degreeVariance(g));
         System.out.printf("λ    = %f%n", propagationRate(beta, mu));
 
+
         int days = 3 * 4 * 7;
         Scenario1 s1 = new Scenario1(g);
         Scenario2 s2 = new Scenario2(g);
         Scenario3 s3 = new Scenario3(g);
 
-        System.out.println("--------- Simulation ---------");
+        System.out.println("--------- Simulation (Propagation %) ---------");
         Thread thread1 = runScenario(s1, days, res -> {
             double prc = res.get(res.size() - 1).size() / (double) g.getNodeCount();
             System.out.printf("Scénario %d : %7.4f%%%n", 1, 100 * prc);
             try {
                 infectionDistribToFile( res, "G"+id+"_S1.dat");
-
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            //writeInfectedDistribution(g, res, 1);
         });
         Thread thread2 = runScenario(s2, days, res -> {
             double prc = res.get(res.size() - 1).size() / (double) g.getNodeCount();
             System.out.printf("Scénario %d : %7.4f%%%n", 2, 100 * prc);
-            //writeInfectedDistribution(g, res, 2);
             try {
                 infectionDistribToFile( res, "G"+id+"_S2.dat");
             } catch (IOException e) {
@@ -70,8 +74,7 @@ public class TestPropa {
         });
         Thread thread3 = runScenario(s3, days, res -> {
             double prc = res.get(res.size() - 1).size() / (double) g.getNodeCount();
-            System.out.printf("Scénario %d : %7.4f%%%n", 3, 100 * prc);
-            //writeInfectedDistribution(g, res, 3);
+            System.out.printf("Scénario %d : %7.4f%%%n * (groupe0: <k> = %f), (groupe1: <k> = %f) \n", 3, 100 * prc, s3.degreMoyenGroupe0(), s3.degreMoyenGroupe1());
             try {
                 infectionDistribToFile( res, "G"+id+"_S3.dat");
             } catch (IOException e) {

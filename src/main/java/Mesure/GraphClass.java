@@ -4,6 +4,9 @@ import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.BreadthFirstIterator;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
+import org.graphstream.graph.implementations.SingleGraph;
+import org.graphstream.stream.file.FileSinkDGS;
+import org.graphstream.stream.file.FileSourceDGS;
 
 import java.io.*;
 import java.util.HashMap;
@@ -221,7 +224,32 @@ public class GraphClass {
         return distribution;
     }
 
+    public static void exportGraph(Graph graph, String filename) {
+        FileSinkDGS fileSinkDGS = new FileSinkDGS();
+        try {
+            fileSinkDGS.writeAll(graph, filename);
+            System.out.println("Graph exported to " + filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("❌ Error exporting graph to " + filename);
+        }
+    }
 
+    public static Graph importGraph(String filename) {
+        Graph graph = new SingleGraph("Barabasi Albert");
+        FileSourceDGS fileSourceDGS = new FileSourceDGS();
+
+        try {
+            fileSourceDGS.addSink(graph);
+            fileSourceDGS.readAll(filename);
+           // System.out.println("Graph imported from " + filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("❌ Error importing graph from " + filename);
+        }
+
+        return graph;
+    }
 }
 
 

@@ -31,7 +31,7 @@ public class Scenario3 implements InterfaceScenario {
         }
         List<Node> susceptibleNodes = this.nodes = nodesList(graph);
         susceptibleNodes.removeAll(this.group1);
-        this.sis = new PropaSis(1 / 7D, 1 / 14D, graph);
+        this.sis = new PropaSis(1 / 7D, 1 / 14D, susceptibleNodes);
     }
 
     public List<Node> getNodes() {
@@ -44,6 +44,20 @@ public class Scenario3 implements InterfaceScenario {
 
     public List<Node> getGroup1() {
         return new ArrayList<>(this.group1);
+    }
+
+    public double degreMoyenGroupe0(){
+        int sum = 0;
+        for (Node n : group0)
+            sum += n.getDegree();
+        return (double) sum / nodes.size();
+    }
+
+    public double degreMoyenGroupe1(){
+        int sum = 0;
+        for (Node n : group1)
+            sum += n.getDegree();
+        return (double) sum / nodes.size();
     }
 
     @Override
