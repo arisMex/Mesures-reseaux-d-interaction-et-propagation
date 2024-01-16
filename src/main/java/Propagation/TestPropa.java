@@ -1,6 +1,8 @@
 package Propagation;
 
+import Mesure.BarabasiGraph;
 import Mesure.GivenGraph;
+import Mesure.RandomGraph;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
@@ -20,19 +22,19 @@ public class TestPropa {
         long begin = System.currentTimeMillis();
 
         Graph g = (new GivenGraph()).getGraph();
-        //Graph gR  = (new RandomGraph()).getGraph();
-        //Graph gBA = (new BarabasiGraph()).importGraph("GraphsData/barabasi.dgs");
+        Graph gR  = (new RandomGraph()).getGraph();
+        Graph gBA = (new BarabasiGraph()).importGraph("GraphsData/barabasi.dgs");
         exec(g, 1);
         scenariosGenererFichierPLT(1);
         genererGraphe("Graph_1_Scenarios.plt");
 
-       /* exec(gR, 2);
+        exec(gR, 2);
         scenariosGenererFichierPLT(2);
         genererGraphe("Graph_2_Scenarios.plt");
 
         exec(gBA, 3);
         scenariosGenererFichierPLT(3);
-        genererGraphe("Graph_3_Scenarios.plt");*/
+        genererGraphe("Graph_3_Scenarios.plt");
         long end = System.currentTimeMillis();
         System.out.printf("%nExec in %d s%n", (end - begin) / 1000);
     }
