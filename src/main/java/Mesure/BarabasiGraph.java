@@ -1,10 +1,7 @@
 package Mesure;
 
-import org.graphstream.algorithm.generator.BarabasiAlbertGenerator;
-import org.graphstream.algorithm.generator.Generator;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
-import org.graphstream.graph.implementations.SingleGraph;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -18,10 +15,9 @@ public class BarabasiGraph extends GraphClass {
 
         int nbNodes = 317080;
         int degreMoyen = (int)6.62208890914917;
-        System.out.println(degreMoyen);
 
         // Graphe Barabàsi-Albert
-        System.out.println("Graph generation ...");
+       /* System.out.println("Graph generation ...");
         Graph graphB = new SingleGraph("Barabàsi-Albert");
         Generator gen = new BarabasiAlbertGenerator((int) Math.round(degreMoyen));
         gen.addSink(graphB);
@@ -30,7 +26,10 @@ public class BarabasiGraph extends GraphClass {
             gen.nextEvents();
             System.out.println("/"+i);
         }
-        System.out.println("Done .");
+        System.out.println("Done .");*/
+
+        Graph graphB = importGraph("GraphsData/barabasi.dgs");
+
 
 
         System.out.println("2. Quelques mesures : ");
@@ -52,6 +51,7 @@ public class BarabasiGraph extends GraphClass {
         String  pltFileName2R = "Barabasi_distribDegres_loglog.plt";
         String graphNameR= "Barabasi_distribsDegres";
         String graphName2R = "Barabasi_distribs_Degre_loglog";
+
         //graphe linéaire
         //genererFichierPLT( pltFileNameR, filenameR, graphNameR, "linéaire");
         //graphe log-log
@@ -60,29 +60,25 @@ public class BarabasiGraph extends GraphClass {
         //genererGraphe(pltFileName2R);
 
 
-
-        //* 5
-
         //* 5.
         int n = 1000;
 
         List<Node> echantillon =getEchantillon(graphB, n);
         HashMap<Integer, Double> distrDist = distanceDistribution(echantillon, n);
-        /*double averageDistance = AVGdist( echantillon,  n);
+        double averageDistance = AVGdist( echantillon,  n);
         System.out.println("\n 5. Distance Moyenne :" + averageDistance);
         System.out.println("⟨d⟩=lnN/ln⟨k⟩=ln("+nbNodes+")/ln("+degreMoyen+") ≈ "+Math.log(nbNodes)/Math.log(degreMoyen));
-        System.out.println("Distance moyenne estimée : " + averageDistance);*/
+        System.out.println("Distance moyenne estimée : " + averageDistance);
 
-        String  pltFileName3 = "Barabasi_distribDist.plt";
+        /*String  pltFileName3 = "Barabasi_distribDist.plt";
         String graphName3 = "Barabasi_distribDist";
         String filename3 = "Barabasi_distributionDist.dat";
-        //distributionDistancesToFile(distrDist, "Barabasi_distributionDist.dat");
+        distributionDistancesToFile(distrDist, "Barabasi_distributionDist.dat");
+        graphe linéaire
+        genererFichierPLT( pltFileName3, filename3, graphName3, "linéaire");
+        genererGraphe(pltFileName3);*/
 
-        //graphe linéaire
-       // genererFichierPLT( pltFileName3, filename3, graphName3, "linéaire");
-        //genererGraphe(pltFileName3);
 
-        exportGraph(graphB,"GraphsData/barabasi.dgs");
     }
 
 }

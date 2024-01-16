@@ -1,11 +1,14 @@
 package Mesure;
 
 import org.graphstream.graph.Graph;
+import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 import org.graphstream.stream.file.FileSourceEdge;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.List;
 
 import static org.graphstream.algorithm.Toolkit.*;
 
@@ -97,6 +100,7 @@ public class GivenGraph extends GraphClass {
         //* 4.
         String filename = "Graph1_distributionDegres.dat";
         distributionDegres(graph, filename);
+
         String  pltFileName = "Graph1_distrib.plt";
         String  pltFileName2 = "Graph1_distrib_loglog.plt";
         String graphName = "Graph1_distribs";String graphName2 = "Graph1_distribs_loglog";
@@ -115,10 +119,9 @@ public class GivenGraph extends GraphClass {
 
         //* 5.
         int n = 1000;
-        //List<Node> echantillon =getEchantillon(graph, n);
-        //HashMap<Integer, Double> distrDist = distanceDistribution(echantillon, n);
-        //double averageDistance = AVGdist( echantillon,  n);
-        double averageDistance = 6.789172899583702;
+        List<Node> echantillon =getEchantillon(graph, n);
+        HashMap<Integer, Double> distrDist = distanceDistribution(echantillon, n);
+        double averageDistance = AVGdist( echantillon,  n);
         System.out.println("\n 5. Distance Moyenne :" + averageDistance);
         System.out.println("⟨d⟩=lnN/ln⟨k⟩=ln("+nbNodes+")/ln("+degreMoyen+") ≈ "+Math.log(nbNodes)/Math.log(degreMoyen));
         System.out.println("Distance moyenne estimée : " + averageDistance);
@@ -134,7 +137,7 @@ public class GivenGraph extends GraphClass {
 
 
 
-        distributionPoissonDegresToFile( graph);
+
 
     }
 

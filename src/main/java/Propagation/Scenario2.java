@@ -11,13 +11,13 @@ import java.util.List;
 public class Scenario2 implements InterfaceScenario{
 
 
-        private PropaSis sis;
+        private Propagation sis;
         private Collection<Node> nodes;
 
         public Scenario2(Graph graph) {
 
             List<Node> susceptibleNodes = (List<Node>) (this.nodes = Toolkit.randomNodeSet(graph, graph.getNodeCount()/2));
-            this.sis = new PropaSis(1.0 / 7.0, 1.0 / 14.0, new ArrayList<>(susceptibleNodes));
+            this.sis = new Propagation(1.0 / 7.0, 1.0 / 14.0, new ArrayList<>(susceptibleNodes));
 
         }
 

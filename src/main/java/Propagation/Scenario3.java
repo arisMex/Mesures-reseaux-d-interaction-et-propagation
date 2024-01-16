@@ -14,7 +14,7 @@ import static Propagation.Functions.nodesList;
 
 public class Scenario3 implements InterfaceScenario {
 
-    private PropaSis sis;
+    private Propagation sis;
     private List<Node> nodes;
     private Collection<Node> group0;
     private Collection<Node> group1;
@@ -31,7 +31,7 @@ public class Scenario3 implements InterfaceScenario {
         }
         List<Node> susceptibleNodes = this.nodes = nodesList(graph);
         susceptibleNodes.removeAll(this.group1);
-        this.sis = new PropaSis(1 / 7D, 1 / 14D, susceptibleNodes);
+        this.sis = new Propagation(1 / 7D, 1 / 14D, susceptibleNodes);
     }
 
     public List<Node> getNodes() {

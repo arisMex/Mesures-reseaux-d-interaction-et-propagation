@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.stream.Stream;
 
 
-public class PropaSis implements InterfaceScenario {
+public class Propagation implements InterfaceScenario {
 
 
         private static final Random RANDOM = new Random();
@@ -15,7 +15,7 @@ public class PropaSis implements InterfaceScenario {
         private Set<Node> susceptibleNodes;
         private Set<Node> infectedNodes;
 
-        PropaSis(double beta, double mu, List<Node> susceptibleNodes) {
+        Propagation(double beta, double mu, List<Node> susceptibleNodes) {
             this.beta = beta;
             this.mu = mu;
             this.susceptibleNodes = new HashSet<>(susceptibleNodes); ;
