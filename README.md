@@ -89,7 +89,7 @@ En revanche, la distribution des distances dans un réseau Barabasi-Albert diff�
 | $`< k >`$    | 6.622           | 6.6229    | 6.99
 | $` C `$      | 0.632           | 1.631 E-5 | 3.94 E-4
 | $`Densité `$ | 2.088  E-5      | 2.088 E-5 | 2.20 E-5
-| $` <d> `$    | 6.9             | 6.70      | 7.06
+| $`< d >`$    | 6.9             | 6.70      | 7.06
 | Connexité    | ✅               | ❌         | ✅
 
 
